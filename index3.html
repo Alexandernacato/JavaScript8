@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de DOM en JS</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de DOM en JS</h1>
+    <button type="button" onclick="cambiarImagen()">Mostrar</button>
+    <br>
+    <img id="imagen" src="./Imagenes/images.jpg" alt="imagen" width="500" height="400">
+ 
+    <script>
+        //Crear una funcion que permita el cambio de una imagen cada dos o tres segundos 
+        //Utilizando setinterval
+        //Set time out 
+        //4 o 5 imagenes
+        //Cuando aplasto el boton se cambian las imganes
+        // Función para cambiar la imagen cada dos segundos
+        function cambiarImagen() {
+            let imagenes = ["./Imagenes/images.jpg", "./Imagenes/images2.jpg","./Imagenes/images3.jpg","./Imagenes/descarga2.jpg","./Imagenes/descarga.jpg"
+            ];
+            
+            let contador = 0;
+
+          
+            let intervalo = setInterval(() => {
+                document.getElementById("imagen").src = imagenes[contador];
+                contador++;
+
+               //Si el contador llega a la ultima imagen vuelve a la primera 
+                if (contador == imagenes.length) {
+                    contador = 0; 
+                }
+            }, 2000); // Cambiar cada 2 segundos
+        }
+    </script>
+</body>
+</html>
